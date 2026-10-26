@@ -8,6 +8,9 @@ Uppercase BUG_* IDs are shell bug IDs as used by the Modernish shell library.
   exiting a virtual subshell in which values were assigned to a variable of
   a type created with 'typeset -T'.
 
+- On 64-bit systems, the maximum subscript limit for indexed arrays has
+  been expanded from 22 bits (4,194,303) to 31 bits (up to 2^31 - 1).
+
 2026-10-26:
 
 - Fixed data corruption occurring when appending (with a += assignment) a

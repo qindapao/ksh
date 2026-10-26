@@ -1578,7 +1578,7 @@ To assign values to an indexed array, use
 The value of all non-negative
 subscripts must be in the
 range of
-0 through 4,194,303.
+0 through 4,194,303 (or up to 2^31 - 1 on 64-bit platforms).
 A negative subscript is treated as an offset from the maximum
 current index +1 so that \-1 refers to the last element.
 Indexed arrays can be declared with the

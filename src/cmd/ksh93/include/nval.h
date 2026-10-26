@@ -272,7 +272,11 @@ struct Namval
 #define NV_CLONE	4
 
 /* The following are operations for nv_putsub() */
-#define ARRAY_BITS	22
+#if defined(_LP64) || defined(__LP64__) || SIZEOF_VOID_P == 8
+#define ARRAY_BITS	31	/* 64-bit platforms: up to 2^31 - 1 */
+#else
+#define ARRAY_BITS	22	/* 32-bit platforms: up to 2^22 -1 */
+#endif
 #define ARRAY_ADD	(1L<<ARRAY_BITS)	/* add subscript if not found */
 #define ARRAY_SCAN	(2L<<ARRAY_BITS)	/* For ${array[@]} */
 #define ARRAY_UNDEF	(4L<<ARRAY_BITS)	/* For ${array} */
